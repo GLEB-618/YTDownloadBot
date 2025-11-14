@@ -1,3 +1,5 @@
 .env
 __pycache__/
 logs/
+telegram-bot-api-data/
+docker-compose copy.yaml
