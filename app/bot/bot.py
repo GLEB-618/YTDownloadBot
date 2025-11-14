@@ -12,8 +12,8 @@ logger = get_logger(__name__, "logs.log")
 
 async def run_bot():
     try:
-        local_server = TelegramAPIServer.from_base("http://127.0.0.1:8081")
-        session = AiohttpSession(api=local_server)
+        server = TelegramAPIServer.from_base(settings.TELEGRAM_API_BASE_URL)
+        session = AiohttpSession(api=server)
         bot = Bot(token=settings.BOT_TOKEN, session=session, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
         dp = Dispatcher() 
 
